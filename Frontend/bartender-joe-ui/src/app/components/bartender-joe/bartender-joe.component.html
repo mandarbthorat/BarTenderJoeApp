@@ -1,0 +1,72 @@
+<div class="content-wrapper" style="min-height: 1604.44px;">
+    <!-- Main content -->
+    <section class="content">
+      <div class="row m-4">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">Enter Product Type (Valid entries: 1-Milk, 2-Orange)</h5>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                        <div class="input-group">
+                            <input id="productId" class="form-control fs-3" maxlength="99"  placeholder="Enter Product Index" 
+                            [(ngModel)]="productId"
+                            (ngModelChange)="onInputChange()" autocomplete="off" />
+                            <button *ngIf="productId" class="btn btn-outline-secondary fs-3" (click)="clearInput()">&times;</button>
+                        </div>
+                </div>
+              
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+               <h5 class="card-title">You have selected a product</h5>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <span *ngIf="productResponse"
+                class="fw-bold fs-2 px-4 py-2 bg-secondary text-white rounded">  {{ productResponse || "Product" }}</span>
+              </div>
+              
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+          
+        </div>
+      </div>
+      <div class="row m-4">
+        <div class="col-12">
+            <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">Bartender Joe</h5>
+            </div>
+            <div class="card-body">
+                <span class="fw-bold fs-3 text-secondary">{{readyMsg}}</span>
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="row m-4">
+        <div class="col-12">
+            <div class="card">
+            <div class="card-header">
+               <button class="btn btn-primary"  (click)='mixDrink()'>Mix Drink</button>
+            </div>
+            </div>
+        </div>
+      </div>
+       <div class="row m-4">
+        <div class="col-12">
+        <div class="ps-4 fs-3"><span class="fw-bold fs-3 text-secondary">OUTPUT: {{mixResult}}</span></div>
+        <textarea fascetTracer rows="10" cols="80" readonly></textarea>
+       </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
